@@ -11,14 +11,21 @@ function LunchCheckController($scope) {
 
     $scope.checkHowMuch = function() {
         var foodArray = $scope.givenFoods.split(",");
-        if (foodArray == "") {
-            return $scope.resultMessage = "Please enter data first";
-        }
-        else if (foodArray.length < 4) {
-            return $scope.resultMessage = "Enjoy!";
+        if (foodArray != "") {
+            $scope.textboxStyle = {"border": "1px solid green"};
+            $scope.messageStyle = {"color": "green"};
+            
+            if (foodArray.length < 4) {
+                return $scope.resultMessage = "Enjoy!";
+            }
+            else {
+                return $scope.resultMessage = "Too much!";  
+            }    
         }
         else {
-            return $scope.resultMessage = "Too much!";
+            $scope.textboxStyle = {"border": "1px solid red"};
+            $scope.messageStyle = {"color": "red"};
+            return $scope.resultMessage = "Please enter data first";
         }
     };
 }

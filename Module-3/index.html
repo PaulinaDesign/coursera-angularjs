@@ -1,13 +1,15 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="NarrowItDownApp">
   <head>
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
     <title>Narrow Down Your Menu Choice</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <link rel="stylesheet" href="styles/styles.css">
   </head>
 <body>
-   <div class="container">
+   <div class="container" ng-controller="NarrowItDownController as controller">
     <h1>Narrow Down Your Chinese Menu Choice</h1>
 
     <div class="form-group">
@@ -19,7 +21,7 @@
 
     <!-- found-items should be implemented as a component -->
     <found-items found-items="...." on-remove="...."></found-items>
-  </div>
+   </div>
 
 </body>
 </html>

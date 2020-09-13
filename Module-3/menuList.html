@@ -1,0 +1,11 @@
+<ol>
+    <li ng-repeat="item in foundItems" class="list-group">
+        <b>{{ item.name }}</b>  |  {{ item.short_name }}
+        <br>
+        {{ item.description }}
+        <br>
+        <button ng-click="onRemove({index: $index})" class="remove-button">Don't want this one!</button>
+        <hr>
+    </li>
+</ol>
+<div class="error" ng-if="foundItems.length == 0">Nothing found</div>

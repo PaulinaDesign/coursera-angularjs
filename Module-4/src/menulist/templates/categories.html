@@ -1,8 +1,10 @@
 <div class="container">
-    <a ui-sref="home" class="breadcrumbs">Home</a>
+    <a ui-sref="home" class="breadcrumbs">Home</a> <span>/ Categories</span>
     <hr>
 
-    <ol>
-        <li><a ui-sref="items">All categories listed</a></li>
+    <p>PICK A CATEGORY:</p>
+
+    <ol ng-repeat="category in $ctrl.categories">
+        <li><a ui-sref="items({ categoryShortName: category.short_name, categoryName: category.name})">{{ category.name }}</a></li>
     </ol>
 </div>

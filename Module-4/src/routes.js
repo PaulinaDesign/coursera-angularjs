@@ -18,7 +18,23 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
     })
     .state("categories", {
         url: "/categories",
-        templateUrl: "src/menulist/templates/categories/html"
+        templateUrl: "src/menulist/templates/categories.html",
+        controller: "MenuCategoriesController as categories",
+        resolve: {
+            categories: ["MenuDataService", function(MenuDataService) {
+                return MenuDataService.getAllCategories();
+            }]
+        }
+    })
+    .state("items", {
+        url: "/categories/item",
+        templateUrl: "src/menulist/templates/categories.html",
+        controller: "MenuCategoriesController as items",
+        resolve: {
+            items: ["MenuDataService", function(MenuDataService) {
+                return MenuDataService.getItemsForCategory(categoryShortName);
+            }]
+        }
     });
 }
 

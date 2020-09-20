@@ -1,0 +1,28 @@
+<html ng-app="ManuApp" lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Restaurant Menu App</title>
+    </head>
+    <body>
+        <h1>Restaurant Menu</h1>
+        <hr>
+
+        <ui-view></ui-view>
+
+    
+        <script src="lib/angular.min.js"></script>
+        <script src="lib/angular-ui-router.min.js"></script>
+
+        <script src="src/menulist/menuapp.module.js"></script>
+        <script src="src/menulist/data.module.js"></script>
+
+        <script src="src/routes.js"></script>
+
+        <script src="src/menulist/categories.component.js"></script>
+        <script src="src/menulist/items.component.js"></script>
+        <script src="src/menulist/menudata.service.js"></script>
+
+    </body>
+</html>
